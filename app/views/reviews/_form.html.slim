@@ -7,9 +7,14 @@
           li = message
 
   .field
-    = f.label :rating
-    = f.number_field :rating
+    #star-rating
   .field
     = f.label :comment
     = f.text_area :comment
   .actions = f.submit 'Save'
+
+javascript:
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
